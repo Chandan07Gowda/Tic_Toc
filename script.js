@@ -140,8 +140,8 @@ function aiTurn() {
 	var cell;
 
 	if (emptyCells(board).length == 9) {
-		x = parseInt(Math.random() * 3);
-		y = parseInt(Math.random() * 3);
+		x = parseInt(crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF * 3);
+		y = parseInt(crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF * 3);
 	}
 	else {
 		move = minimax(board, emptyCells(board).length, COMP);
